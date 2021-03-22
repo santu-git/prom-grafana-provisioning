@@ -27,7 +27,7 @@ global:
   scrape_interval: 10s
 
 scrape_configs:
-  - job_name: 'server_metrics'
+  - job_name: 'node'
     scrape_interval: 5s
     static_configs:
       - targets: ['172.16.16.100:9090','172.16.16.101:9100']
