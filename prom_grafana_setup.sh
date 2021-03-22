@@ -30,11 +30,11 @@ scrape_configs:
   - job_name: 'prometheus_metrics'
     scrape_interval: 5s
     static_configs:
-      - targets: ['localhost:9090']
+      - targets: ['172.16.16.100:9090']
   - job_name: 'node_exporter_metrics'
     scrape_interval: 5s
     static_configs:
-      - targets: ['localhost:9100','172.16.16.101:9100']
+      - targets: ['172.16.16.100:9100','172.16.16.101:9100']
 EOF
 
 echo "[TASK 1.8] Creating promethus user without login privilage"
