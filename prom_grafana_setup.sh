@@ -27,10 +27,10 @@ global:
   scrape_interval: 10s
 
 scrape_configs:
-  - job_name: 'node'
+  - job_name: 'node_exporter'
     scrape_interval: 5s
     static_configs:
-      - targets: ['172.16.16.100:9090','172.16.16.101:9100']
+      - targets: ['172.16.16.50:9100','172.16.16.51:9100']
 EOF
 
 echo "[TASK 1.8] Creating promethus user without login privilage"

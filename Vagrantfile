@@ -12,7 +12,7 @@ Vagrant.configure(2) do |config|
     node.vm.box_check_update = false
     node.vm.box_version = "3.1.12"
     node.vm.hostname = "monitor-client"
-    node.vm.network "private_network", ip: "172.16.16.101"
+    node.vm.network "private_network", ip: "172.16.16.51"
 
     #Default Provider
     node.vm.provider "virtualbox" do |v|
@@ -31,7 +31,7 @@ Vagrant.configure(2) do |config|
     node.vm.box_check_update = false
     node.vm.box_version = "3.1.12"
     node.vm.hostname = "monitor-server"
-    node.vm.network "private_network", ip: "172.16.16.100"
+    node.vm.network "private_network", ip: "172.16.16.50"
   
     #Default Provider
     node.vm.provider "virtualbox" do |v|
@@ -39,7 +39,7 @@ Vagrant.configure(2) do |config|
       v.memory = 2048
       v.cpus = 2
     end
-  
+    node.vm.provision "shell", path: "node_exporter_setup.sh"
     node.vm.provision "shell", path: "prom_grafana_setup.sh"
   end
 
